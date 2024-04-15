@@ -20,3 +20,12 @@ I have used the **openAI 3.5 turbo instruct** model to generate answer from the 
 ## UI
 I've used streamlit for a very simple UI.
 
+## How to run
+Follow the steps to run the application
+<ol>
+  <li>Create a new python env and install the requirements.txt file</li>
+  <li>run the command 'streamlit run app.py'</li>
+  <li>Now click scrape data to save data locally</li>
+  <li>Click generate embeddings to save embeddings locally</li>
+  <li>Ask queries regarding pals eg: "How to get anubis"</li>
+</ol>
