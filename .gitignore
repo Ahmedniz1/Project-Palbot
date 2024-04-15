@@ -1,4 +1,5 @@
 .env
+app_old.py
 embeddings/
 env/
 __pycache__/

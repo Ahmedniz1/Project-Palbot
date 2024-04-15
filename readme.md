@@ -11,8 +11,12 @@ Items: https://palworld.gg/items</br>
 Pal Breed: https://www.rockpapershotgun.com/palworld-breeding-combos
 
 ## Embeddings
-For the embeddings, I used the **all-MiniLM-L6-v2** model for creating embeddings. I used **chromadb** and stored the embeddings locally on my drive.
+For the embeddings, I used the **all-MiniLM-L6-v2** model for creating embeddings. For storing the embeddings, I used **chromadb** and stored the embeddings locally on my drive.
 
 ## Query Response
 
 I have used the **openAI 3.5 turbo instruct** model to generate answer from the most similar embeddings. 
+
+## UI
+I've used streamlit for a very simple UI.
+

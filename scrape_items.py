@@ -22,16 +22,17 @@ def scrape_all_items(link):
         soup = BeautifulSoup(driver.page_source, "html.parser")
         page_items = scrape_page(soup)
         items.append(page_items)
+        print(page_items)
+#        break
 #    print(pages)
     return items
 
 def item_entry(item_dict,recipe=False):
-
     item = f'Item name:{item_dict["name"]}\nItem desc:{item_dict["desc"]}\nItem keys:{item_dict["keys"]}'
     if recipe:
         item = item+ f'Item recipe:{item_dict["recipe"]}'
-    item = item.replace('\n\n\n','\n')
     item = item.replace('\n\n','\n')
+    item = item.replace('\n\n\n','\n')
     return item
 
 def scrape_page(soup):
@@ -51,12 +52,13 @@ def scrape_page(soup):
         item_dict = {}
         item_dict['name'] = i.find('div',class_ = 'name').find('div',class_ = 'text').text
         item_dict['desc'] = i.find('div',class_ = 'description').text
+        item_dict['desc'] = item_dict['desc'].replace('\n','')
         keys = i.find('div',class_ = 'keys').find_all('div',class_ = 'key')
         keys_info = '' 
         for key in keys:
             key_name = key.find('div',class_ = 'text').text
             key_value = key.find('div',class_ = 'value').text
-            keys_info = keys_info + key_name+': '+key_value+'\n'
+            keys_info = keys_info + key_name+' '+key_value+'\n'
         item_dict['keys'] = keys_info
         recipe = i.find('div',class_ = 'recipe')
         if recipe is not None:
